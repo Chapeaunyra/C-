@@ -1,0 +1,57 @@
+public String Compare_Mixed()
+        {
+            String[][] reference = ConvertToLinesAndWords(this.reference);
+            String[][] produit = ConvertToLinesAndWords(this.produit);
+
+            String equal = "";
+            String added = "";
+            String moved = "";
+            String result = "";
+
+            int compteur = 0;
+            int compt = 0;
+
+            for (int ligneProd = 0; ligneProd < produit.Length - 1; ligneProd++)
+            {
+                for (int ligneRef = 0; ligneRef < reference.Length - 1; ligneRef++)
+                {
+                     MOTS DE LA LIGNE PRODUIT
+                    for (int motsProd = 0; motsProd < produit[ligneProd].Length - 1; motsProd++)
+                    {
+                         MOTS DE LA LIGNE REFERENCE
+                        for (int motsRef = 0; motsRef < reference[ligneRef].Length - 1; motsRef++)
+                        {
+                            if (produit[ligneProd][motsProd] == reference[ligneRef][motsRef])
+                            {
+                                equal += produit[ligneProd][motsProd] + Environment.NewLine;
+                                compteur++;
+                                break;
+                            }
+
+                        }
+                        if (compteur > 0)
+                        {
+                            moved += produit[ligneProd][motsProd]    + Environment.NewLine;
+                            compteur = 0;
+                            break;
+                        }
+                        else
+                        {
+                            added += produit[ligneProd][motsProd] + Environment.NewLine;
+                            break;
+                        }
+                        
+                    }
+                    break;
+                }
+            }
+            result += "EQUAL : " + Environment.NewLine + equal + Environment.NewLine +
+                      "ADDED : " + Environment.NewLine + added + Environment.NewLine +
+                      "MOVED : " + Environment.NewLine + moved + Environment.NewLine;
+
+            equal = "";
+            added = "";
+            moved = "";
+
+            return result;
+        }
