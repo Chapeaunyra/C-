@@ -338,7 +338,7 @@ namespace EMFi
 
             String equal = "";
             String added = "";
-            String moved = "";
+            // String moved = "";
             String result = "";
 
             String compteur = "";
@@ -346,7 +346,7 @@ namespace EMFi
 
             for (int ligneProd = 0; ligneProd < produit.Length; ligneProd++)
             {
-                compteur += Environment.NewLine + " Ligne " + (ligneProd + 1) + Environment.NewLine;
+                // compteur += Environment.NewLine + " Ligne " + (ligneProd + 1) + Environment.NewLine;
                 // MOTS DE LA LIGNE PRODUIT
                 for (int motsProd = 0; motsProd < produit[ligneProd].Length; motsProd++)
                 {
@@ -370,17 +370,16 @@ namespace EMFi
                     }
                     compt = 0;
                 }
-                result += " -------------------------" + Environment.NewLine +
+                //equal = "";
+                //added = "";
+            }
+            result += " -------------------------" + Environment.NewLine +
                       "EQUAL : " + Environment.NewLine + equal + Environment.NewLine +
                       Environment.NewLine + " -------------------------" + Environment.NewLine +
                       "ADDED : " + Environment.NewLine + added + Environment.NewLine +
                       Environment.NewLine + " -------------------------" + Environment.NewLine;
-                // "MOVED : " + Environment.NewLine + moved + Environment.NewLine +
-                // Environment.NewLine + " -------------------------" + Environment.NewLine;
-
-                equal = "";
-                added = "";
-            }
+            // "MOVED : " + Environment.NewLine + moved + Environment.NewLine +
+            // Environment.NewLine + " -------------------------" + Environment.NewLine;
 
             return result;
         }
@@ -388,16 +387,16 @@ namespace EMFi
         private String[] Cleaning(String[] text)
         {
 
-            foreach(var mot in text)
+            for(int i = 0; i < text.Length; i++)
             {
                 // mot.Replace("\r", "");
                 // mot.Replace("\n", "");
-                mot.Replace("\r\n\r\r\r.\r\n", ".\r\n");
-                mot.Replace("\r\r\r/\r\r", "/\r\n");
-                mot.Replace("\r\n.\r\n", ".\r\n");
-                mot.Replace("\r\n\r\r\r", "\r\n");
-                mot.Replace("\r\n\r", "\r\n");
-                mot.Replace("\r\r", "\r\n");
+                text[i] = text[i].Replace("\r\n\r\r\r.\r\n", ".\r\n");
+                text[i] = text[i].Replace("\r\r\r/\r\r", "/\r\n");
+                text[i] = text[i].Replace("\r\n.\r\n", ".\r\n");
+                text[i] = text[i].Replace("\r\n\r\r\r", "\r\n");
+                text[i] = text[i].Replace("\r\n\r", "\r\n");
+                text[i] = text[i].Replace("\r\r", "\r\n");
             }
 
             return text;
