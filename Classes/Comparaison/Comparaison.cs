@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace [nom projet]
+namespace EMFi
 {
     class Comparaison
     {
@@ -39,7 +39,15 @@ namespace [nom projet]
         public String[] ConvertToWords(String text)
         {
             String[] mots = text.Split(' ');
-
+            
+            for(int i = 0; i < mots.Length; i++)
+            {
+                if (mots[i].Substring(mots[i].Length - 1) == ".")
+                {
+                    mots[i] = mots[i].Substring(0, mots[i].Length -1); 
+                }
+            }
+            
             return mots;
         }
 
@@ -60,47 +68,55 @@ namespace [nom projet]
             String[] lignes = text;
             String[] mots = new String[lignes.Length];
 
-            String tmp = "";
-
-            tmp = ConvertToText(lignes);
-
-            for (int i = 0; i < lignes.Length; i++)
-            {
-
-            }
-
+            String tmp = ConvertToText(lignes);
             mots = tmp.Split(' ');
+
+            Cleaning(mots);
 
             return mots;
         }
 
+        public String Test(String[][] mots)
+        {
+            String result = "";
 
+            for(int i = 0; i < mots.Length; i++)
+            {
+                result += " Ligne : " + mots[i] + Environment.NewLine + "       Contient les mots: ";
+                mots[i] = new string[300];
+                for (int j = 0; j < mots[i].Length; j++)
+                {
+                    result += Environment.NewLine + "       " + mots[i];
+                }
+            }
+
+            return result;
+        }
 
         public String[][] ConvertToLinesAndWords(String text)
         {
             String[] lignes = ConvertToLines(text);
             String[][] mots = new String[lignes.Length][];
 
-            for (int i = 0; i < lignes.Length - 1; i++)
+            for (int i = 0; i < lignes.Length; i++)
             {
-                mots[i] = new string[lignes[i].Length];
+                mots[i] = new String[lignes[i].Split(' ').Length];
 
-                for (int j = 0; j < lignes[i].Length - 1; j++)
+                for (int j = 0; j < lignes[i].Split(' ').Length; j++)
                 {
-                    mots[i][j] = ConvertToWords_txt(lignes[i]);
+                    mots[i] = lignes[i].Split(' ');
                 }
             }
             return mots;
         }
 
-
-
         public String[] ConvertToLines(String text)
         {
             String[] phrases = text.Split('.');
+
             for (int i = 0; i < phrases.Length; i++)
             {
-                phrases[i] += "\n";
+                phrases[i] = phrases[i] + "." + Environment.NewLine;
             }
 
             return phrases;
@@ -317,7 +333,7 @@ namespace [nom projet]
         // A CONCEPTUALISER
         public String Compare_Mixed()
         {
-            String[][] reference = ConvertToLinesAndWords(this.reference);
+            String[] reference = ConvertToWords(ConvertToLines(this.reference));
             String[][] produit = ConvertToLinesAndWords(this.produit);
 
             String equal = "";
@@ -325,57 +341,67 @@ namespace [nom projet]
             String moved = "";
             String result = "";
 
-            int compteur = 0;
+            String compteur = "";
             int compt = 0;
 
-            for (int ligneProd = 0; ligneProd < produit.Length - 1; ligneProd++)
+            for (int ligneProd = 0; ligneProd < produit.Length; ligneProd++)
             {
-
-                for (int ligneRef = 0; ligneRef < reference.Length - 1; ligneRef++)
+                compteur += Environment.NewLine + " Ligne " + (ligneProd + 1) + Environment.NewLine;
+                // MOTS DE LA LIGNE PRODUIT
+                for (int motsProd = 0; motsProd < produit[ligneProd].Length; motsProd++)
                 {
 
-                    // MOTS DE LA LIGNE PRODUIT
-                    for (int motsProd = 0; motsProd < produit[ligneProd].Length - 1; motsProd++)
+                    // MOTS DE LA LIGNE REFERENCE
+                    for (int motsRef = 0; motsRef < reference.Length; motsRef++)
                     {
-
-                        // MOTS DE LA LIGNE REFERENCE
-                        for (int motsRef = 0; motsRef < reference[ligneRef].Length - 1; motsRef++)
+                        // EXISTE DANS LES DEUX, à compléter par
+                        // &motsProd == motsRef pour plus de précision.
+                        if (produit[ligneProd][motsProd] == reference[motsRef])
                         {
-                            if (produit[ligneProd][motsProd] == reference[ligneRef][motsRef])
-                            {
-                                equal += produit[ligneProd][motsProd] + Environment.NewLine;
-                                compteur++;
-                                break;
-                            }
-
-                        }
-                        if (compteur > 0)
-                        {
-                            moved += produit[ligneProd][motsProd] + Environment.NewLine;
-                            compteur = 0;
+                            equal += produit[ligneProd][motsProd] + " ";
+                            compt++;
                             break;
                         }
-                        else
+                        // Vérifie qu'on a testé tous les mots ref et que rien ne correspond
+                        else if (motsRef == reference.Length - 1 & compt < 1)
                         {
-                            added += produit[ligneProd][motsProd] + Environment.NewLine;
-                            break;
+                            added += produit[ligneProd][motsProd] + " ";
                         }
-
                     }
-                    break;
+                    compt = 0;
                 }
-            }
-            result += "EQUAL : " + Environment.NewLine + equal + Environment.NewLine +
+                result += " -------------------------" + Environment.NewLine +
+                      "EQUAL : " + Environment.NewLine + equal + Environment.NewLine +
+                      Environment.NewLine + " -------------------------" + Environment.NewLine +
                       "ADDED : " + Environment.NewLine + added + Environment.NewLine +
-                      "MOVED : " + Environment.NewLine + moved + Environment.NewLine;
+                      Environment.NewLine + " -------------------------" + Environment.NewLine;
+                // "MOVED : " + Environment.NewLine + moved + Environment.NewLine +
+                // Environment.NewLine + " -------------------------" + Environment.NewLine;
 
-            equal = "";
-            added = "";
-            moved = "";
-
-            result += Environment.NewLine + " -------------------------" + Environment.NewLine;
+                equal = "";
+                added = "";
+            }
 
             return result;
         }
+
+        private String[] Cleaning(String[] text)
+        {
+
+            foreach(var mot in text)
+            {
+                // mot.Replace("\r", "");
+                // mot.Replace("\n", "");
+                mot.Replace("\r\n\r\r\r.\r\n", ".\r\n");
+                mot.Replace("\r\r\r/\r\r", "/\r\n");
+                mot.Replace("\r\n.\r\n", ".\r\n");
+                mot.Replace("\r\n\r\r\r", "\r\n");
+                mot.Replace("\r\n\r", "\r\n");
+                mot.Replace("\r\r", "\r\n");
+            }
+
+            return text;
+        }
+
     }
 }
