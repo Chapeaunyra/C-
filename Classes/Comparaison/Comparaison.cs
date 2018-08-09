@@ -1,8 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EMFi
 {
@@ -34,7 +31,11 @@ namespace EMFi
             return ConvertToWords(ConvertToLines(text));
         }
 
-
+        public override String ToString()
+        {
+            return " Text ref : " + Environment.NewLine + this.reference + Environment.NewLine + 
+                   " Text produit : " + Environment.NewLine + this.produit;
+        }
 
         public String[] ConvertToWords(String text)
         {
@@ -373,18 +374,21 @@ namespace EMFi
                 //equal = "";
                 //added = "";
             }
-            result += " -------------------------" + Environment.NewLine +
-                      "EQUAL : " + Environment.NewLine + equal + Environment.NewLine +
-                      Environment.NewLine + " -------------------------" + Environment.NewLine +
-                      "ADDED : " + Environment.NewLine + added + Environment.NewLine +
-                      Environment.NewLine + " -------------------------" + Environment.NewLine;
+            result += " ------------------------------------------------------------------------ "
+                    + Environment.NewLine + Environment.NewLine + "EQUAL : " + Environment.NewLine + Environment.NewLine 
+                    + equal + Environment.NewLine + Environment.NewLine +
+                    " ------------------------------------------------------------------------ " 
+                    + Environment.NewLine + Environment.NewLine + "ADDED : " + Environment.NewLine + Environment.NewLine 
+                    + added + Environment.NewLine + Environment.NewLine +
+                    " ------------------------------------------------------------------------ ";
             // "MOVED : " + Environment.NewLine + moved + Environment.NewLine +
             // Environment.NewLine + " -------------------------" + Environment.NewLine;
 
             return result;
         }
 
-        private String[] Cleaning(String[] text)
+        public String[] Compare_Mixed2()
+        {
         {
 
             for(int i = 0; i < text.Length; i++)
