@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace EMFi
+namespace [nom du namespace]
 {
     class Comparaison
     {
@@ -389,6 +389,56 @@ namespace EMFi
 
         public String[] Compare_Mixed2()
         {
+            String[] reference = ConvertToWords(ConvertToLines(this.reference));
+            String[][] produit = ConvertToLinesAndWords(this.produit);
+
+            String equal = "";
+            String added = "";
+            // String moved = "";
+            String[] result = new String[1];
+
+            String compteur = "";
+            int compt = 0;
+
+            for (int ligneProd = 0; ligneProd < produit.Length; ligneProd++)
+            {
+                //result[0] += Environment.NewLine + " Ligne " + (ligneProd + 1) + Environment.NewLine;
+                // MOTS DE LA LIGNE PRODUIT
+
+                // result[0] += "Ligne " + (ligneProd + 1) + " : " + Environment.NewLine;
+
+                for (int motsProd = 0; motsProd < produit[ligneProd].Length; motsProd++)
+                {
+                    // MOTS DE LA LIGNE REFERENCE
+                    for (int motsRef = 0; motsRef < reference.Length; motsRef++)
+                    {
+                        // EXISTE DANS LES DEUX, à compléter par
+                        // &motsProd == motsRef pour plus de précision.
+                        if (produit[ligneProd][motsProd] == reference[motsRef])
+                        {
+                            
+                            equal += produit[ligneProd][motsProd] + " ";
+                            compt++;
+                            break;
+                        }
+                        // Vérifie qu'on a testé tous les mots ref et que rien ne correspond
+                        else if (motsRef == reference.Length - 1 & compt < 1)
+                        {
+                            added += produit[ligneProd][motsProd] + " ";
+                        }
+                    }
+                    
+                    compt = 0;
+                }
+                result[0] += " EQUAL :" + Environment.NewLine + equal
+                                + " ADDED :" + Environment.NewLine + added;
+                added = "";
+                equal = "";
+            }
+            return result;
+        }
+
+        public String[] Cleaning(String[] text)
         {
 
             for(int i = 0; i < text.Length; i++)
