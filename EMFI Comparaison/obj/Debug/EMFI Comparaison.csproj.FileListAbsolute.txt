@@ -1,0 +1,40 @@
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\EMFI Comparaison.exe.config
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\EMFI Comparaison.exe
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\EMFI Comparaison.pdb
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\fr\EMFI Comparaison.resources.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Core.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\pdfbox-1.8.9.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.Runtime.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Util.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Security.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Text.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.XML.API.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\commons-logging.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.SwingAWT.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Media.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\junit.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\fontbox-1.8.9.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\jempbox-1.8.9.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\bcmail-jdk15-1.44.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\bcprov-jdk15-1.44.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\icu4j-3.8.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.Runtime.JNI.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Management.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Naming.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Beans.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.AWT.WinForms.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Charsets.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Jdbc.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Remoting.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Corba.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\bin\Debug\IKVM.OpenJDK.Misc.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\EMFI Comparaison.csproj.ResolveComReference.cache
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\EMFI_Comparaison.Form1.resources
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\EMFI_Comparaison.Properties.Resources.resources
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\EMFI_Comparaison.Form1.fr.resources
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\EMFI Comparaison.csproj.GenerateResource.cache
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\EMFI Comparaison.csproj.CoreCompileInputs.cache
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\fr\EMFI Comparaison.resources.dll
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\EMFI Comparaison.csproj.CopyComplete
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\EMFI Comparaison.exe
+C:\Users\vlousth\source\repos\EMFI Comparaison\EMFI Comparaison\obj\Debug\EMFI Comparaison.pdb
